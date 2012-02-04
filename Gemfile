@@ -16,6 +16,13 @@ group :assets do
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
 end
+group :development do
+  gem 'rspec-rails'
+end
+group :test do
+  gem 'rspec'
+  gem 'spork'
+end
 
 gem 'jquery-rails'
 gem 'execjs'
