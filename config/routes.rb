@@ -1,15 +1,4 @@
 SampleApp::Application.routes.draw do
-  get "user/index"
-
-  get "user/show"
-
-  get "user/edit"
-
-  get "page/home"
-
-  get "page/contact"
-
-  get "page/about"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
