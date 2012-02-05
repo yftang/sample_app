@@ -3,12 +3,12 @@ class PageController < ApplicationController
     @title = "Home"
   end
 
-  def contact
-    @title = "Contact"
-  end
-
   def about
     @title = "About Us"
+  end
+
+  def contact
+    @title = "Contact"
   end
 
 end
