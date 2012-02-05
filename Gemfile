@@ -5,9 +5,9 @@ gem 'rails', '3.1.3'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
 
 gem 'json'
+gem 'heroku'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,11 +18,15 @@ group :assets do
 end
 group :development do
   gem 'rspec-rails'
+  gem 'mysql2'
 end
 group :test do
   gem 'rspec-rails'
   gem 'webrat'
   gem 'spork'
+end
+group :production do
+  gem 'pg'
 end
 
 gem 'jquery-rails'
@@ -40,4 +44,3 @@ gem 'therubyracer'
 
 # To use debugger
 # gem 'ruby-debug'
-
