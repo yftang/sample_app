@@ -18,7 +18,7 @@ group :assets do
 end
 group :development do
   gem 'rspec-rails'
-  gem 'annotate'
+  gem 'annotate', :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
   gem 'mysql2'
 end
 group :test do
