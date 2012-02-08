@@ -18,6 +18,7 @@ group :assets do
 end
 group :development do
   gem 'rspec-rails'
+  gem 'annotate'
   gem 'mysql2'
 end
 group :test do
