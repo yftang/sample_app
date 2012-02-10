@@ -49,6 +49,7 @@ GEM
     factory_girl_rails (1.6.0)
       factory_girl (~> 2.5.0)
       railties (>= 3.0.0)
+    gravatar_image_tag (1.0.0)
     heroku (2.19.2)
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
@@ -152,6 +153,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.1)
   execjs
   factory_girl_rails
+  gravatar_image_tag
   heroku
   jquery-rails
   json
