@@ -18,13 +18,14 @@ group :assets do
 end
 group :development do
   gem 'rspec-rails'
-  gem 'annotate', :git => 'git://github.com/jeremyolliver/annotate_models.git', :branch => 'rake_compatibility'
+  gem 'annotate'
   gem 'mysql2'
 end
 group :test do
   gem 'rspec-rails'
   gem 'webrat'
   gem 'spork'
+  gem 'factory_girl_rails'
 end
 group :production do
   gem 'pg'
