@@ -2,9 +2,7 @@ require 'spec_helper'
 
 describe "Users" do
   describe "sigup" do
-    
     describe "failure" do
-      
       it "should not make a new user" do
         lambda do
           visit signup_path
