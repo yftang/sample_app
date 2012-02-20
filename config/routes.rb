@@ -7,8 +7,8 @@ SampleApp::Application.routes.draw do
   match '/about',   :to => 'page#about'
   match '/help',    :to => 'page#help'
   match '/signup',  :to => 'users#new'
-  match 'signin',   :to => 'sessions#new'
-  match 'signout',  :to => 'sessions#destroy'
+  match '/signin',   :to => 'sessions#new'
+  match '/signout',  :to => 'sessions#destroy'
 
   root :to => 'page#home'
 
