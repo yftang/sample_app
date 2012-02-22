@@ -150,6 +150,54 @@ describe User do
       end
     end
   end
+  
+  describe "admin attribute" do
+    before(:each) do
+      @attr = {:name => "New User",
+               :email => "user@example.com",
+               :password => "foobar",
+               :password_confirmation => "foobar"}
+      @user = User.create!(@attr)
+    end
+    
+    it "should respond to admin" do
+      @user.should respond_to(:admin)
+    end
+    
+    it "should not be an admin by default" do
+      @user.should_not be_admin
+    end
+    
+    it "should be conbertible to an admin" do
+      @user.toggle!(:admin)
+      @user.should be_admin
+    end
+  end
+  
+  describe "micropost associations" do
+    before(:each) do
+      @user = User.create(@attr)
+      @mp1 = Factory(:micropost, :user => @user, :created_at => 1.day.ago)
+      @mp2 = Factory(:micropost, :user => @user, :created_at => 1.hour.ago)
+    end
+    
+    it "should have a microposts attribute" do
+      @user.should respond_to(:microposts)
+    end
+    
+    it "should have the right microposts in the right order" do
+      @user.microposts.should == [@mp2, @mp1]
+    end
+    
+    it "should destroy associated microposts" do
+      @user.destroy
+      [@mp1, @mp2].each do |micropost|
+        lambda do
+          Micropost.find(micropost)
+        end.should raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
+  end
 end
 
 # == Schema Information
