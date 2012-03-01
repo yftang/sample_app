@@ -1,0 +1,2 @@
+$("#followers").html('<%= pluralize(@user.followers.count, "follower") %>')
+$("#follow_form").html("<%= escape_javascript(render('users/follow')) %>")
